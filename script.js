@@ -95,27 +95,36 @@ var upperCasedCharacters = [
 function writePassword() {
   var password = generatePassword();
   function generatePassword() {
+    var password=prompt("Please Select password length")
+    if (length < 8 == length > 123)
+    return false;
+    
     var password = prompt("Please choose a special character to include in your password")
     if (specialCharacters.index){
       password = specialCharacters.index
       confirm("You selected" + specialCharacters.index)
+      return true;
       
     } 
     var password = prompt("Please include a at least one lowercase letter")
     if (lowerCasedCharacters.index) {
     password = lowerCasedCharacters.index
     confirm("You selected" + lowerCasedCharacters.index)
+    return true;
+  
     }
     var password = prompt("Please include a at least one uppercase letter")
     if (upperCasedCharacters.index) {
       password = upperCasedCharacters.index
       confirm("You Selected" + upperCasedCharacters.index)
+      return true;
 
     }
     var password = prompt("Please include a at least one numeric character")
     if (numericCharacters.index) {
       password = numericCharacters.index
       confirm("You Selected" + numericCharacters.index)
+      return true;
     }
 
     
